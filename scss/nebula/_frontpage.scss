@@ -1,0 +1,689 @@
+.pagelayout-frontpage,
+.pagelayout-coursecategory {
+    .dashboard-card {
+        position: relative;
+        
+        
+
+        .dashboard-card-footer {
+            border-radius: .5rem;
+        }
+
+        .card-body {
+            padding: .8rem;
+            
+        }
+
+        .customfields {
+            .customfield {
+                font-size: 80%;
+                margin-bottom: .25rem;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                .customfieldname,
+                .customfieldseparator {
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .enrolmenticons {
+            position: absolute;
+            bottom: 8px;
+            right: 0;
+
+            .enrolmenticon {
+                padding: 4px 8px;
+                background-color: #fff;
+                color: $brand-primary;
+                border-radius: .5rem;
+                margin: 0 4px;
+
+                .icon {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .course-contacts {
+            padding: 0 0.8rem 0.8rem 0.8rem;
+
+            .contact {
+                display: flex;
+
+                &:not(:first-of-type) {
+                    margin-top: .4rem;
+                }
+
+                img {
+                    width: 48px;
+                    height: 48px;
+                    border: 1px solid $gray-300;
+                }
+
+                p {
+                    margin-left: .4rem;
+                    margin-bottom: 0;
+
+                    &.role {
+                        color: $gray-900;
+                        font-size: 80%;
+                    }
+                }
+            }
+        }
+
+        .dashboard-card-footer {
+            padding: 0 .8rem .8rem .8rem;
+        }
+    }
+}
+#page-site-index #page {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+#page-site-index {
+    #nebulaslideshow {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding: 0 15px;
+
+        .carousel-inner {
+            border-radius: .5rem;
+        }
+    }
+
+    #feature {
+
+        background-color: #f1f6fd;
+        padding: 30px 15px;
+        
+        border-radius: 0.5rem;
+        margin-bottom: 30px;
+        .card {
+            border: 1px solid #e2e8f0;
+        }
+
+        .icon-lg {
+            width: 6rem;
+            height: 6rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    #numbers {
+        padding: 30px 15px;
+
+        .sectionheading p {
+            line-height: 1;
+        }
+
+        .user-rating-box-area {
+            .rate-box {
+                box-shadow: 0 6px 0 rgb($brand-primary,.6);
+                border-radius: 25px;
+                padding: 30px 40px 35px 40px;
+
+                &.bg-primary {
+                    background-color: $brand-primary !important;
+                }
+
+                &.bg-cloudburst {
+                    background-color: #213053;
+                }
+
+                h3 {
+                    color: #fff;
+                    font-size: 60px;
+                    font-weight: 600;
+                    font-style: normal;
+                    letter-spacing: -1px;
+                    line-height: 66px;
+                    margin-bottom: 30px;
+                }
+
+                p {
+                    color: #fff;
+                    font-size: 17px;
+                    font-weight: 400;
+                    font-style: normal;
+                    letter-spacing: normal;
+                    line-height: 30px;
+                    margin-bottom: 0;
+                }
+            }
+
+            .rate-box-2 {
+                margin-top: 0;
+                box-shadow: 0 6px 0 rgb(33 48 83 / 65%);
+            }
+        }
+    }
+
+    #topofscroll {
+        background-color: #f1f6fd;
+        padding: 0 15px;
+        border-radius: 0.5rem;
+        #page-content,
+        #region-main {
+            background-color: #f1f6fd;
+        }
+
+        #page-content {
+            padding-left: 0;
+            padding-right: 0;
+            margin-bottom: 0;
+        }
+
+        #frontpage-available-course-list {
+            h2 {
+                text-align: center;
+                padding-bottom: 10px;
+            }
+        }
+    }
+
+    .accordion {
+        width: 100%;
+        border-radius: 20px;
+        border-top: 3px solid $brand-primary;
+        .card {
+            /*margin-top: 1rem;
+            border-radius: .5rem;*/
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            .card-header {
+                
+
+                .btn-link {
+                    color: $brand-primary;
+                }
+            }
+        }
+    }
+}
+.accordion>.card:not(:first-of-type), .accordion>.card:not(:last-of-type){
+    border-radius: 20px !important;
+}
+.accordion_wrapper {
+    border-radius: 20px;
+    box-shadow: 0px 30px 70px 0px rgba(11, 6, 70, 0.08), inset 0px 3px 0px 0px rgba(47, 128, 237, 0.004);
+}
+.accordion .btn-link:focus {
+    box-shadow: none;
+}
+@include media-breakpoint-down(md) {
+    .pagelayout-frontpage .dashboard-card{
+        margin: 1rem 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    .pagelayout-coursecategory .dashboard-card {
+        width: 100% !important;
+        margin: 1rem 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    #page-site-index {
+        .footer-content-popover .footer-section {
+            text-align: center;
+        }
+
+        .column-right .footer-title {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    #page-site-indexs {
+        #numbers {
+            .rate-box-2 {
+                margin-top: 1rem !important;
+            }
+        }
+    }
+}
+
+.mwslider-text{
+    width: 640px;
+    text-align: center;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    background-color: rgba($brand-primary,.6);
+    backdrop-filter: blur(7px);
+    padding: 45px 60px;
+    border-radius: 5px;
+    color: #fff;
+}
+.dir-rtl .mwslider-text{
+    right: 0;
+    left: auto;
+}
+.carousel-control-next, .carousel-control-prev {
+    bottom: auto;
+    background: rgba(0,0,0,0.8);
+    width: 45px;
+    height: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    
+    background-size: 100% 100%;
+}
+.mwslider-text h3 {
+    font-size: 56px;
+}
+.mwslider-text p {
+    font-size: 24px;
+}
+.progress-bar {
+    background: linear-gradient(90deg,#406cd2 0%,#5fb86b 100%);
+}
+.progress {
+    height: 10px;
+}
+.top_wrap button, .uv_wrap button {
+    float: right;
+    color: #6a737b;
+    background: #fff;
+    box-shadow: none;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #d5ddea !important;
+    border: none;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    color: #000;
+}
+#goToNextSlide, #uvgoToNextSlide {
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+}
+#goToPrevSlide, #uvgoToPrevSlide {
+    border-top-right-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+.frontpage-course-list-all .card-body{
+    height: 120px;
+}
+.card-date-content {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    background: $brand-primary;
+    color: #FFFFFF;
+}
+.upcoming-event-card-heading-wrapper {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 8px;
+}
+.upcoming-event-card-details {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #555555;
+}
+.month-date-wrapper {
+    padding-right: 25px;
+}
+.month-date-wrapper .month {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: $brand-primary;
+}
+.month-date-wrapper .date {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 30px;
+    text-align: center;
+    color: $brand-primary;
+}
+.event-details-wrapper {
+    padding-left: 25px;
+    border-left: 1px solid #D9D9D9;
+}
+.upcoming-event-card-place {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #444444;
+}
+.upcoming-event-heading {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 22px;
+    text-align: center;
+    color: #444444;
+}
+.upcoming-event-date .event-heading {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+    color: $brand-primary;
+}
+.upcoming-event-card-heading {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 30px;
+    color: #444444;
+}
+.upcoming-event-card-content {
+    padding: 0px;
+}
+.upcoming-event-card-content a, .upcoming-event-date a {
+    text-decoration: none;
+}
+.place-time-wraper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.upcoming-event-card-image-wrapper {
+    width: 100%;
+    
+    min-height: 175px;
+    background-size: cover;
+    background-position: center;
+}
+.upcoming-event-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+    align-items: center;
+}
+.number-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.market-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.upcoming-event-current-card {
+    width: 60%;
+    border: 1px solid #D9D9D9;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    overflow: hidden;
+}
+/*.upcoming-event-next-date-content {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+}*/
+.upcoming-event-date {
+    display: flex;
+    flex-direction: row;
+}
+#page-site-index #events {
+    padding: 30px 15px;
+}
+
+
+.gtco-testimonials {
+    position: relative;
+    margin-top: 30px;
+
+    h2 {
+        font-size: 30px;
+        text-align: center;
+        color: #333333;
+        margin-bottom: 50px;
+    }
+
+    .owl-stage-outer {
+        padding: 30px 0;
+    }
+
+    .owl-nav {
+        display: none;
+    }
+
+    .owl-dots {
+        text-align: center;
+
+        span {
+            position: relative;
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            display: block;
+            background: #fff;
+            border: 2px solid $brand-primary;
+            margin: 0 5px;
+        }
+
+        .active {
+            box-shadow: none;
+
+            span {
+                background: $brand-primary;
+                box-shadow: none;
+                height: 12px;
+                width: 12px;
+                margin-bottom: -1px;
+            }
+        }
+    }
+
+    .card {
+        background: #fff;
+        box-shadow: 0 8px 30px -7px #c9dff0;
+        margin: 0 20px;
+        padding: 0 10px;
+        border-radius: 20px;
+        border-top: 3px solid #580848 !important;
+
+        .card-img-top {
+          max-width: 100px;
+          border-radius: 50%;
+          margin: 15px auto 0;
+          box-shadow: 0 8px 20px -4px #95abbb;
+          width: 100px;
+          height: 100px;
+        }
+
+        h5 {
+          color: $brand-primary;
+          font-size: 21px;
+          line-height: 1.3;
+
+          span {
+            font-size: 18px;
+            color: #666666;
+          }
+        }
+
+        p {
+          font-size: 18px;
+          color: #555;
+          padding-bottom: 15px;
+        }
+    }
+
+    .active {
+        opacity: 0.5;
+        transition: all 0.3s;
+    }
+
+    .center {
+        opacity: 1;
+
+        h5 {
+            font-size: 24px;
+
+            span {
+                font-size: 20px;
+            }
+        }
+
+        .card-img-top {
+            max-width: 100%;
+            height: 120px;
+            width: 120px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+  .gtco-testimonials {
+    margin-top: 20px;
+  }
+}
+
+.owl-carousel {
+  .owl-nav button {
+    &.owl-next, &.owl-prev {
+      outline: 0;
+    }
+  }
+
+  button.owl-dot {
+    outline: 0;
+  }
+}
+#page-site-index .editmode-switch-form {
+    margin-bottom: 0;
+}
+@media only screen and (max-width: 481px) {
+    #page-site-index #numbers .user-rating-box-area .rate-box.bg-cloudburst {
+        margin-top: 15px;
+    }
+}
+.place-wrapper, .time-wrapper {
+    display: block;
+    width: 100%;
+}
+
+/*
+Animate Bootstrap Carousel
+Element by thecodeblock.com
+*/
+
+/********************************/
+/*       Coloring indicators    */
+/********************************/
+.carousel-animate{
+    .carousel-indicators > li {
+        margin: 0 2px;
+        width: 5px;
+        border-radius: 20px;
+        background-color: $brand-primary;
+        border-color: $brand-primary;
+        opacity: .7;
+        &.active {
+          width: 5px;
+          height: 7px;
+          opacity: 1;
+        }
+    }
+}
+
+/********************************/
+/*          Hero Headers        */
+/********************************/
+.carousel-animate{
+    .hero {
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+    }
+}
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+.btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 20px auto;
+}
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 2em; }    
+}
+/********************************/
+/*          Fade Effect         */
+/********************************/
+.carousel-fade {
+    .carousel-inner {
+        .item {
+            transition-property: opacity;
+        }
+        .item,
+        .active.left,
+        .active.right {
+            opacity: 0;
+        }
+        .active,
+        .next.left,
+        .prev.right {
+            opacity: 1;
+        }
+        .next,
+        .prev,
+        .active.left,
+        .active.right {
+            left: 0;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+}
+/************************************/
+/*       BS bacground Images       */
+/**********************************/
+.carousel-bg {
+    .carousel-inner {
+        .item {
+            background-color: darkslategrey;
+            background-size: cover;
+            background-position: center;
+            min-height: 480px;
+        }
+    }
+}

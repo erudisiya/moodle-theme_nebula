@@ -1,0 +1,316 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_nebula/drawers
+
+    Boost drawer template.
+
+    Context variables required for this template:
+    * sitename - The name of the site
+    * output - The core renderer for the page
+    * bodyattributes - attributes for the body tag as a string of html attributes
+    * sidepreblocks - HTML for the blocks
+    * hasblocks - true if there are blocks on this page
+    * courseindexopen - true if the nav drawer should be open on page load
+    * regionmainsettingsmenu - HTML for the region main settings menu
+    * hasregionmainsettingsmenu - There is a region main settings menu on this page.
+
+    Example context (json):
+    {
+        "sitename": "Moodle",
+        "output": {
+            "doctype": "<!DOCTYPE html>",
+            "page_title": "Test page",
+            "favicon": "favicon.ico",
+            "main_content": "<h1>Headings make html validators happier</h1>"
+         },
+        "bodyattributes":"",
+        "sidepreblocks": "<h2>Blocks html goes here</h2>",
+        "hasblocks":true,
+        "courseindexopen": true,
+        "navdraweropen": false,
+        "blockdraweropen": true,
+        "regionmainsettingsmenu": "",
+        "hasregionmainsettingsmenu": false,
+        "addblockbutton": ""
+    }
+}}
+{{> theme_nebula/head }}
+
+<body {{{ bodyattributes }}}>
+{{> core/local/toast/wrapper}}
+<div id="page-wrapper" class="d-print-block">
+
+    {{{ output.standard_top_of_body_html }}}
+
+    {{> theme_nebula/navbar }}
+
+    <div id="page" data-region="mainpage" data-usertour="scroller" class="drawers drag-container bg-white">
+
+
+        <div id="nebulaslideshow" class="container-fluid">
+            <div id="carouselIndicators" class="carousel slide carousel-fade carousel-animate carousel-bg" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    {{#slides}}
+                        <li data-target="#nebulaslideshow" data-slide-to="{{{ key }}}" {{#active}}class="active"{{/active}}></li>
+                    {{/slides}}
+                </ol>
+                <div class="carousel-inner">
+                    {{#slides}}
+                        <div class="carousel-item {{#active}}active{{/active}}" style="width: 100%; height: 600px; background: url('{{image}}') no-repeat; background-size: cover; background-position: center;">
+
+                            <div class="carousel-caption">
+                               <div class="hero fadeInUp animated">
+                                    <hgroup>
+                                    {{{text}}}
+                                    </hgroup>
+                                    <a href = "#" class="btn btn-hero btn-lg zoomIn animated" role="button">See all features</a>
+                                </div>
+                            </div>
+                        </div>
+                    {{/slides}}
+                </div>
+                <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">{{#str}}previous{{/str}}</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">{{#str}}next{{/str}}</span>
+                </a>
+            </div>
+        </div>
+
+        <div id="topofscroll">
+            <div id="page-content" class="d-print-block main-inner">
+                <div id="region-main-box">
+                    <section id="region-main" aria-label="{{#str}}content{{/str}}">
+                        {{{ output.course_content_header }}}
+                        {{{ output.main_content }}}
+                        {{{ output.course_content_footer }}}
+                    </section>
+                </div>
+            </div>
+        </div>
+        {{#eventsenabled}}
+            <section id="events">
+                <div class="upcoming-event-wrapper">
+                    <div class="upcoming-event-heading">Upcoming events</div>
+                    <div class = "upcoming-event-current-card row">
+                        <div class="col-sm-4  upcoming-event-card-image-wrapper p-0">
+                            <div class="card-date-content">{{feventtimestart}}</div>
+                        </div>
+                        <div class="col-sm-8 upcoming-event-card-content">
+                            <a href = "{{feventviewurl}}">
+                                <div class="upcoming-event-card-heading-wrapper">
+                                    <div>
+                                        <div class="upcoming-event-card-heading">
+                                            {{feventname}}
+                                        </div>
+                                        {{#feventlocation}}
+                                        <div class="upcoming-event-card-place">
+                                            {{#str}}location{{/str}}: {{feventlocation}}
+                                        </div>
+                                        {{/feventlocation}}
+                                    </div>
+                                    <div class="upcoming-event-card-details">
+                                        {{feventdescription}}
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {{#eventsrepeatenabled}}
+                    <div class = "container-fluid">
+                        <div class = "row">
+                            <div class="uv_wrap col-md-12 text-right mb-2">
+
+                                <button type="button" id="uvgoToPrevSlide">
+                                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </button>
+                                <button type="button" id="uvgoToNextSlide">
+                                    <i class="fa fa-chevron-left" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = "container-fluid">
+                        <div class = "upcoming-event-next-date-content">
+                            {{#eventbox}}
+
+                            <div class="upcoming-event-date">
+                                <div class="month-date-wrapper">
+                                    <div class="month ">{{eventtimestartmonth}}</div>
+                                    <div class=" date ">{{eventtimestartdate}}</div>
+                                </div>
+                                <a href = "{{eventviewurl}}">
+                                    <div class="w-100 event-details-wrapper">
+                                        <div class="event-heading">{{eventname}}</div>
+                                        <div class="place-time-wraper">
+                                            <span class="place-wrapper">
+                                                <span class="Place-text">
+                                                    {{#str}}location{{/str}}: {{eventlocation}}
+                                                </span>
+                                            </span>
+                                            <span class="time-wrapper">
+                                                <span class="time-text">Time:</span> {{eventtimestarttime}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            {{/eventbox}}
+                        </div>
+                    </div>
+                    {{/eventsrepeatenabled}}
+                </div>
+
+            </section>
+        {{/eventsenabled}}
+        
+        <section id="numbers">
+            <div class="number-wrapper">
+                <h3 class="h1 mt-3 mb-3">{{{numberscontent}}}</h3>
+                
+            </div>
+            <div class = "row">
+                <div class = "col-xxl-6 col-xl-6 col-lg-6 col-md-12 mt-5">
+                {{#numbersfrontpage}}
+                    <div class="row user-rating-box-area">
+                        <div class="col-sm-6 col-xs-8">
+                            <div class="h-100 rate-box bg-primary">
+                                <h3 class="numscroller" data-max="{{{numbersusers}}}" data-slno="1" data-min="0" data-delay="1" data-increment="1">
+                                    0
+                                </h3>
+                                <p>{{#str}}numbersusers, theme_nebula{{/str}}</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xs-8">
+                            <div class="h-100 rate-box rate-box-2 bg-cloudburst">
+                                <h3 class="numscroller" data-max="{{{numberscourses}}}" data-slno="1" data-min="0" data-delay="1" data-increment="1">
+                                    0
+                                </h3>
+                                <p>{{#str}}numberscourses, theme_nebula{{/str}}</p>
+                            </div>
+                        </div>
+                    </div>
+                {{/numbersfrontpage}}
+                </div>
+                <div class = "col-xxl-6 col-xl-6 col-lg-6 col-md-12 mt-5">
+                {{#faqenabled}}
+                    <div class="accordion_wrapper">
+                        <div class="accordion" id="accordionFaq">
+                            {{#faq}}
+                                <div class="card">
+                                    <div class="card-header" id="heading-{{{id}}}">
+                                        <h2 class="mb-0">
+                                            <button class="btn btn-link btn-block text-left {{{buttoncollapsed}}}" type="button" data-toggle="collapse" data-target="#collapse-{{{id}}}" aria-expanded="false" aria-controls="collapse-{{{id}}}">
+                                                {{{question}}}
+                                            </button>
+                                        </h2>
+                                    </div>
+
+                                    <div id="collapse-{{{id}}}" class="collapse {{{areaclass}}}" aria-labelledby="heading-{{{id}}}" data-parent="#accordionFaq">
+                                        <div class="card-body ml-5">
+                                            {{{answer}}}
+                                        </div>
+                                    </div>
+                                </div>
+                            {{/faq}}
+                        </div>
+                    </div>
+                {{/faqenabled}}
+                </div>
+            </div>
+        </section>
+        
+        {{#displaymarketingbox}}
+            <section id="feature">
+                <div class = "market-wrapper">
+                    <h3 class="h1 mt-3 mb-3">{{{marketingheading}}}</h3>
+                    <p>{{{marketingcontent}}}</p>
+                </div>
+                <div class="gtco-testimonials">
+                    <div class="owl-carousel owl-carousel1 owl-theme">
+                        
+                        {{#marketingboxes}}
+                        <div>
+                            <div class="card text-center">
+                                <img class="card-img-top" src="{{{icon}}}" alt="">
+                                <div class="card-body">
+                                  <h5>{{{heading}}}<br />
+                                    <span> Project Manager </span>
+                                  </h5>
+                                  <p class="card-text">{{{content}}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {{/marketingboxes}}
+                          
+                        
+                        
+                    </div>
+                </div>
+                    
+                
+            </section>
+        {{/displaymarketingbox}}
+        
+
+        {{#faqenabled}}
+            <!--<section id="faq" class="scale-up scale-up-show">
+                <div class="nebula-container-fluid">
+                    <h2>{{#str}}faq, theme_nebula{{/str}}</h2>
+
+                    <div class="accordion" id="accordionFaq">
+                        {{#faq}}
+                            <div class="card shadow">
+                                <div class="card-header" id="heading-{{{id}}}">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse-{{{id}}}" aria-expanded="false" aria-controls="collapse-{{{id}}}">
+                                            {{{question}}}
+                                        </button>
+                                    </h2>
+                                </div>
+
+                                <div id="collapse-{{{id}}}" class="collapse" aria-labelledby="heading-{{{id}}}" data-parent="#accordionFaq">
+                                    <div class="card-body">
+                                        {{{answer}}}
+                                    </div>
+                                </div>
+                            </div>
+                        {{/faq}}
+                    </div>
+                </div>
+            </section>-->
+        {{/faqenabled}}
+        {{> theme_nebula/footer }}
+        
+    </div>
+    
+    {{{ output.standard_after_main_region_html }}}
+</div>
+
+</body>
+</html>
+{{#js}}
+M.util.js_pending('theme_boost/loader');
+require(['theme_boost/loader', 'theme_boost/drawer'], function(Loader, Drawer) {
+    Drawer.init();
+    M.util.js_complete('theme_boost/loader');
+});
+{{/js}}

@@ -1,0 +1,138 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    Nebula
+    @package theme_nebula
+    @copyright (c) 2022 Erudisiya PVT LTD - https://erudisiya.com/
+    @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+
+}}
+{{!
+    @template theme_nebula/dashboard_stats
+}}
+{{#isdashboardstatsshow}}
+
+<div id="nb_dashboard-stats" class="nb-stats-wrapper">
+	<div class="stat-block">
+		<div class="inner">
+			<div class="icon-container">
+				<span class="nb-icon">
+				<i class="fa fa-book" aria-hidden="true"></i>
+				</span>
+			</div>
+			<div class="info-container d-flex flex-column p-mb-d5">
+				<span class="nb-h-2 dashboard-stats-coursesenrolled">{{coursesenrolled}}</span>
+				<span class="nb-desc-6" title="{{#str}}coursesenrolled, theme_nebula{{/str}}">{{#str}}coursesenrolled, theme_nebula{{/str}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="stat-block">
+		<div class="inner">
+			<div class="icon-container">
+				<span class="nb-icon nb-icon-Completed-course">
+				<i class="fa fa-check" aria-hidden="true"></i>
+				</span>
+			</div>
+			<div class="info-container d-flex flex-column p-mb-d5">
+				<span class="nb-h-2 dashboard-stats-coursescompleted">{{coursescompleted}}</span>
+				<span class="nb-desc-6" title="{{#str}}coursescompleted, theme_nebula{{/str}}">{{#str}}coursescompleted, theme_nebula{{/str}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="stat-block">
+		<div class="inner">
+			<div class="icon-container">
+				<span class="nb-icon nb-icon-Activity-completed">
+				<i class="fa fa-th-large" aria-hidden="true"></i>
+				</span>
+			</div>
+			<div class="info-container d-flex flex-column p-mb-d5">
+				<span class="nb-h-2 dashboard-stats-activitiescompleted">{{activitiescompleted}}</span>
+				<span class="nb-desc-6" title="{{#str}}activitiescompleted, theme_nebula{{/str}}">{{#str}}activitiescompleted, theme_nebula{{/str}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="stat-block">
+		<div class="inner">
+			<div class="icon-container">
+				<span class="nb-icon nb-icon-Due-acitvities">
+				<i class="fa fa-pencil" aria-hidden="true"></i>
+				</span>
+			</div>
+			<div class="info-container d-flex flex-column p-mb-d5">
+				<span class="nb-h-2 dashboard-stats-activitiesdue">{{activitiesdue}}</span>
+				<span class="nb-desc-6" title="{{#str}}activitiesdue, theme_nebula{{/str}}">{{#str}}activitiesdue, theme_nebula{{/str}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="stats-mb-devices">
+		<div class="stat-block">
+			<div class="inner">
+				<div class="icon-container">
+					<span class="nb-icon">
+					<i class="fa fa-book" aria-hidden="true"></i>
+					</span>
+				</div>
+				<div class="info-container d-flex flex-column p-mb-d5">
+					<span class="nb-h-2 dashboard-stats-coursesenrolled">{{coursesenrolled}}</span>
+					<span class="nb-desc-6" title="{{#str}}coursesenrolled, theme_nebula{{/str}}">{{#str}}coursesenrolled, theme_nebula{{/str}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="stat-block">
+			<div class="inner">
+				<div class="icon-container">
+					<span class="nb-icon nb-icon-Activity-completed">
+					<i class="fa fa-check" aria-hidden="true"></i></span>
+				</div>
+				<div class="info-container d-flex flex-column p-mb-d5">
+					<span class="nb-h-2 dashboard-stats-activitiescompleted">{{coursescompleted}}</span>
+					<span class="nb-desc-6" title="{{#str}}activitiescompleted, theme_nebula{{/str}}">{{#str}}activitiescompleted, theme_nebula{{/str}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="stats-mb-devices">
+		<div class="stat-block">
+			<div class="inner">
+				<div class="icon-container">
+					<span class="nb-icon nb-icon-Completed-course">
+					<i class="fa fa-th-large" aria-hidden="true"></i>
+					</span>
+				</div>
+				<div class="info-container d-flex flex-column p-mb-d5">
+					<span class="nb-h-2 dashboard-stats-coursescompleted">{{coursesenrolled}}</span>
+					<span class="nb-desc-6" title="{{#str}}coursescompleted, theme_nebula{{/str}}">{{#str}}coursescompleted, theme_nebula{{/str}}</span>
+				</div>
+			</div>
+		</div>
+		<div class="stat-block">
+			<div class="inner">
+				<div class="icon-container">
+					<span class="nb-icon nb-icon-Due-acitvities">
+					<i class="fa fa-pencil" aria-hidden="true"></i>
+					</span>
+				</div>
+				<div class="info-container d-flex flex-column p-mb-d5">
+					<span class="nb-h-2 dashboard-stats-activitiesdue">{{activitiesdue}}</span>
+					<span class="nb-desc-6" title="{{#str}}activitiesdue, theme_nebula{{/str}}">{{#str}}activitiesdue, theme_nebula{{/str}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+
+{{/isdashboardstatsshow}}
